@@ -1,0 +1,25 @@
+{
+	"layout": "layouts/page.njk",
+	"permalink": "/{{ page.fileSlug }}/",
+	"background_image_path": "/uploads/building.jpg",
+	"map": {
+	  "latitude": -45.8787605,
+	  "longitude": 170.5027976,
+	  "zoom": 13
+	},
+	"_options": {
+		"pagination": {
+			"hidden": true
+		},
+		"layout": {
+			"hidden": true
+		},
+		"permalink": {
+			"hidden": true
+		},
+		"testimonial_image": {
+			"width": 60,
+			"height": 60
+		}
+	}
+}

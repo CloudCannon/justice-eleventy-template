@@ -1,0 +1,138 @@
+---
+ogtype: website
+---
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>{% if title %}{{ title }} | {% endif %}{{ seo.title }}</title>
+		<meta name="description" content="{% pageDescription "" %}">
+		<meta name="robots" content="{% metaRobots "" %}">
+		<meta name="author" content="{% metaAuthor "" %}">
+		<link rel="canonical" href="{% canonicalURL "" %}">
+		{% openGraph "" %}
+		{% twitterCard "" %}
+
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quattrocento|Vollkorn:400,400i,700,700i">
+		<link rel="stylesheet" href="/css/main.css">
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" href="/touch-icon.png" sizes="192x192">
+		<link rel="icon" type="image/png" href="/images/favicon.png">
+	</head>
+
+	<body>
+		<header style="background-image: url('{{ background_image_path }}');" {% if large_header %}class="main-hero"{% endif %}>
+			<div class="container">
+				<h1><a href="/">{{ company.title }}</a></h1>
+				<nav>
+					<ul>
+						{% for item in collections.nav %}
+							<li><a href="{{ item.url }}"{% if page.fileSlug === item.fileSlug %} class="active"{% endif %}>{{ item.data.title }}</a></li>
+						{% endfor %}
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+		<section class="main">
+			<div class="container">
+				{{ content | safe }}
+			</div>
+		</section>
+
+		{% if call_to_action == 'Map' and site.google_maps_javascript_api_key and map %}
+			<section class="map-section">
+				<div id="map"></div>
+			</section>
+
+			<script>
+				window.mapData = {{ map | jsonify }};
+
+				function initMap() {
+					var myOptions = {
+						scrollwheel: false,
+						draggable: false,
+						panControl: false,
+						disableDefaultUI: true,
+						styles: [{"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#000000"},{"lightness":40}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"lightness":16}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":17},{"weight":1.2}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":21}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":16}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":19}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":17}]}],
+						zoom: window.mapData.zoom,
+						maxZoom: window.mapData.zoom,
+						minZoom: window.mapData.zoom,
+						center: new google.maps.LatLng(window.mapData.latitude, window.mapData.longitude),
+						mapTypeId: google.maps.MapTypeId.ROADMAP
+					};
+
+					var map = new google.maps.Map(document.getElementById('map'), myOptions);
+
+					var marker = new google.maps.Marker({
+						map: map,
+						position: new google.maps.LatLng(window.mapData.latitude, window.mapData.longitude)
+					});
+
+					google.maps.event.addDomListener(window, 'resize', function() {
+						map.setCenter(myOptions.center);
+					});
+				}
+			</script>
+			<script async defer src="https://maps.googleapis.com/maps/api/js?key={{ site.google_maps_javascript_api_key }}&amp;callback=initMap"></script>
+		{% elseif call_to_action == 'Contact' %}
+			<section class="quote-section">
+				<p class="container editable">
+					<a href="/contact/">Contact us</a> today to find out how we can help you. Your first consultation is free.
+				</p>
+			</section>
+		{% else %}
+			<section class="quote-section">
+				<p class="container editable">
+					<a href="/blog/">Read our blog</a> for an introduction and quick tips on various areas of the law.
+				</p>
+			</section>
+		{% endif %}
+
+		<footer>
+			<div class="container">
+				<div class="footer-columns" data-cms-editor-link="cloudcannon:collections/_data/footer.yml">
+					{% for column in footer %}
+						<ul class="footer-links">
+							<li>
+								<h2>{{ column.title }}</h2>
+							</li>
+							{% for link in column.links %}
+								<li>
+									<a {% if link.new_window %}target="_blank"{% endif %} href="{{ link.link }}" {% if link.social_icon %}class="{{ link.social_icon | slug }}-icon"{% endif %}>
+										{% if link.social_icon %}
+											{% socialIcon link.social_icon | safe %}
+										{% endif %}
+
+										{{ link.name }}
+									</a>
+								</li>
+							{% endfor %}
+						</ul>
+					{% endfor %}
+
+					<ul class="footer-links">
+						<li>
+							<h2>{{ company.title }}</h2>
+						</li>
+						<li>{{ company.description }}</li>
+						<li><a href="/feed.xml">{% socialIcon 'RSS' | safe %} Subscribe with RSS</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="legal-line">
+				<p class="container">
+					&copy; {{ build.date.getFullYear() }} {{ company.title }}
+					&bull;
+					<a href="/terms/">Terms</a>
+					&bull;
+					Template by <a href="https://cloudcannon.com/">CloudCannon</a>
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

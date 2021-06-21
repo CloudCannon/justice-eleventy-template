@@ -1,0 +1,12 @@
+---
+layout: layouts/default.njk
+---
+{% if title %}
+	<div class="page-header">
+		<h2>{{ title }}</h2>
+	</div>
+{% endif %}
+
+<article class="content">
+	{{ content | safe }}
+</article>

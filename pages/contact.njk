@@ -1,0 +1,44 @@
+---
+title: Contact
+call_to_action: Map
+large_header: false
+show_in_navigation: true
+navigation_order: 3
+---
+
+<p class="editable">
+	Come see us in person, give us a call, or send us a message with your details and we'll be in contact shortly after. No obligations and your first meeting is free.
+</p>
+
+<div class="columns">
+	<div class="column">
+		<label>Phone Number</label>
+		<p class="contact-info"><a href="tel:{{ company.contact_phone_number }}">{{ company.contact_phone_number }}</a></p>
+
+		<label>Email Address</label>
+		<p class="contact-info"><a href="mailto:{{ company.contact_email_address }}">{{ company.contact_email_address }}</a></p>
+
+		<label>Postal Address</label>
+		<address class="contact-info">{{ company.postal_address | replace(',', '<br>') | safe }}</address>
+		<label>Address</label>
+		<address class="contact-info">{{ company.address | replace(',', '<br>') | safe }}</address>
+	</div>
+
+	<div class="column">
+		<form method="post" action="/contact-success/">
+			<label for="email_address">Email Address</label>
+			<input id="email_address"type="text" name="email">
+
+			<label for="name">Name</label>
+			<input id="name" type="text" name="name">
+
+			<label for="message">Message</label>
+			<textarea id="message" name="message"></textarea>
+
+			<input type="hidden" name="_to" value="{{ company.contact_email_address }}">
+			<input type="text" name="_gotcha" style="display: none;">
+
+			<input type="submit" value="Send Message">
+		</form>
+	</div>
+</div>
