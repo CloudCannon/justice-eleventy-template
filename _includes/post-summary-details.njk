@@ -2,7 +2,7 @@
 	{{ post.data.date | postDate }}
 
 	{% for tag in post.data.tags %}
-		{% if tag !== 'post' %}
+		{% if tag !== 'posts' %}
 			&bull;
 			<a class="post-summary-category" href="/category/{{ tag | slug }}/">{{ tag }}</a>
 		{% endif %}
