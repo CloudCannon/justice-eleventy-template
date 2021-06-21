@@ -11,7 +11,6 @@ navigation_order: 4
 ---
 <p class="editable">Get an introduction to some industry topics and stay informed with our in-depth articles.</p>
 
-{{ pagination | log }}
 <ol class="post-list">
 	{%- for post in pagination.items -%}
 		{%- include 'post-summary.njk' -%}
