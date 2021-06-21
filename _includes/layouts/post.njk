@@ -8,7 +8,7 @@ layout: layouts/page.njk
 
 <h2>Meet the author</h2>
 <div class="post-author staff">
-	{% set member = collections.staff | getCollectionItemBySlug(post.data.author_staff_member) %}
+	{% set member = collections.staffMembers | getCollectionItemBySlug(post.data.authorStaffMember) %}
 	{% include 'staff-member.njk' %}
 </div>
 

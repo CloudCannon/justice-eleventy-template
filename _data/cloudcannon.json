@@ -3,7 +3,7 @@
 	"_comments": {
 		"large_header": "Toggles the size of the top banner.",
 		"show_in_navigation": "Toggles a link in the top banner.",
-		"author_staff_member": "The staff member writing this post.",
+		"authorStaffMember": "The staff member writing this post.",
 		"call_to_action": "Type of request shown at the bottom of this page.",
 		"background_image_path": "Image shown in the top banner, blank for the default.",
 		"testimonials": "Update, add or remove testimonials.",
