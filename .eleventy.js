@@ -32,4 +32,3 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(pluginSeo, seoData);
   eleventyConfig.addPlugin(pluginRss);
 };
-
