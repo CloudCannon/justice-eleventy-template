@@ -1,4 +1,3 @@
-const pluginCloudCannon = require('eleventy-plugin-cloudcannon');
 const pluginSeo = require('eleventy-plugin-seo');
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const seoData = require('./_data/seo.json');
@@ -30,7 +29,6 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPassthroughCopy('images');
 	eleventyConfig.addPassthroughCopy('css');
 
-	eleventyConfig.addPlugin(pluginCloudCannon);
 	eleventyConfig.addPlugin(pluginSeo, seoData);
   eleventyConfig.addPlugin(pluginRss);
 };
