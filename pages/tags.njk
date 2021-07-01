@@ -14,7 +14,8 @@ eleventyComputed:
   title: "{{ tag }} Blog"
 permalink: /category/{{ tag | slug }}/
 ---
-<p class="editable">You're currently looking at posts categorised under <strong>{{ tag }}</strong>. <a href="/blog/">View all posts</a> instead.</p>
+<p class="editable">You're currently looking at posts categorised under <strong>{{ tag }}</strong>.
+<a href="/blog/">View all posts</a> instead.</p>
 
 <ol class="post-list">
   {% for post in collections[tag] | reverse %}
