@@ -34,7 +34,7 @@ or Eleventy locally).
 
 ## Develop
 
-Justice was built with [Eleventy](https://www.11ty.dev/) version 0.12.1, but should support newer
+Justice was built with [Eleventy](https://www.11ty.dev/) version 1.0, but should support newer
 versions as well.
 
 ~~~bash
