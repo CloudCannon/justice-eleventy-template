@@ -1,11 +1,8 @@
 {
 	"tags": "staffMembers",
 	"permalink": false,
-	"_options": {
+	"_inputs": {
 		"tags": {
-			"hidden": true
-		},
-		"permalink": {
 			"hidden": true
 		}
 	}

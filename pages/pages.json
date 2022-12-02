@@ -7,19 +7,12 @@
 	  "longitude": 170.5027976,
 	  "zoom": 13
 	},
-	"_options": {
-		"pagination": {
-			"hidden": true
-		},
+	"_inputs": {
 		"layout": {
 			"hidden": true
 		},
 		"permalink": {
 			"hidden": true
-		},
-		"testimonial_image": {
-			"width": 60,
-			"height": 60
 		}
 	}
 }

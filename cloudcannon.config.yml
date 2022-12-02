@@ -44,3 +44,12 @@ _inputs:
     comment: Address for the contact form to send to.
   new_window:
     comment: Whether the link opens a new browser tab/window.
+  pagination:
+    hidden: true
+  testimonial_image:
+    width: 60
+    height: 60
+  layout:
+    hidden: true
+  permalink:
+    hidden: true
