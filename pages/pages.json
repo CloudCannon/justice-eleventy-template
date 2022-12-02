@@ -6,13 +6,5 @@
 	  "latitude": -45.8787605,
 	  "longitude": 170.5027976,
 	  "zoom": 13
-	},
-	"_inputs": {
-		"layout": {
-			"hidden": true
-		},
-		"permalink": {
-			"hidden": true
-		}
 	}
 }

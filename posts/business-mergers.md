@@ -3,7 +3,7 @@ title: Business Mergers
 date: 2016-08-10T00:00:00Z
 tags:
   - Business
-authorStaffMember: jane-doe
+author: 05589684-8d33-4d2f-8fde-460f9922d319
 image: "https://unsplash.it/600/450?image=737&a=.png"
 ---
 
