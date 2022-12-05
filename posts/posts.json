@@ -4,14 +4,8 @@
 	"permalink": "/posts/{{ page.fileSlug }}/",
 	"background_image_path": "/uploads/building.jpg",
 	"large_header": false,
-	"_options": {
+	"_inputs": {
 		"tags": {
-			"hidden": true
-		},
-		"layout": {
-			"hidden": true
-		},
-		"permalink": {
 			"hidden": true
 		}
 	}

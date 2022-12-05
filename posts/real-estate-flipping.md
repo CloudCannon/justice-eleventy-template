@@ -3,7 +3,7 @@ title: Real Estate Flipping
 date: 2016-11-11T00:00:00Z
 tags:
   - Property
-authorStaffMember: john-doe
+author: 8c6c132e-1c21-413e-be81-874091df1841
 image: "https://unsplash.it/600/450?image=448&a=.png"
 ---
 

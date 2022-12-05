@@ -24,6 +24,7 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addFilter('postDate', (date) => date ? date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) : '');
 	eleventyConfig.addFilter('jsonify', (obj) => obj ? JSON.stringify(obj) : null);
 	eleventyConfig.addFilter('getCollectionItemBySlug', (collection, slug) => collection.find((item) => slug === item.fileSlug));
+	eleventyConfig.addFilter('getCollectionItemByUuid', (collection, slug) => collection.find((item) => slug === item.data._uuid));
 
 	eleventyConfig.addPassthroughCopy('uploads');
 	eleventyConfig.addPassthroughCopy('images');

@@ -1,11 +1,11 @@
 {
 	"tags": "staffMembers",
 	"permalink": false,
-	"_options": {
-		"tags": {
-			"hidden": true
+	"_inputs": {
+		"_uuid": {
+		    "instance_value": "UUID"
 		},
-		"permalink": {
+		"tags": {
 			"hidden": true
 		}
 	}

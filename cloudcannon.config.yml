@@ -1,0 +1,70 @@
+timezone: Etc/UTC
+
+collections_config:
+  posts:
+    schemas:
+      default:
+        path: .cloudcannon/schemas/post.md
+  staffMembers:
+    schemas:
+      default:
+        path: .cloudcannon/schemas/staff-member.md
+
+_select_data:
+  call_to_actions:
+    - Contact
+    - Blog
+    - Map
+  social_icons:
+     - Facebook
+     - Instagram
+     - LinkedIn
+     - Pinterest
+     - Tumblr
+     - Twitter
+     - YouTube
+     - RSS
+
+_inputs:
+  large_header:
+    comment: Toggles the size of the top banner.
+  show_in_navigation:
+    comment: Toggles a link in the top banner.
+  author:
+    type: select
+    options:
+      values: collections.staffMembers
+      value_key: _uuid
+    comment: The staff member writing this post.
+  call_to_action:
+    comment: Type of request shown at the bottom of this page.
+  background_image_path:
+    comment: Image shown in the top banner, blank for the default.
+  testimonials:
+    comment: Update, add or remove testimonials.
+  map:
+    comment: Update the map location and display settings.
+  latitude:
+    comment: Coordinates for the center marker on the map.
+  longitude:
+    comment: Coordinates for the center marker on the map.
+  zoom:
+    comment: The zoom level for the map.
+  phone_extension:
+    comment: The digits after dialing the company phone.
+  credentials:
+    comment: Shown as subtext on staff member summaries.
+  contact_email_address:
+    comment: Address for the contact form to send to.
+  new_window:
+    comment: Whether the link opens a new browser tab/window.
+  pagination:
+    hidden: true
+  testimonial_image:
+    width: 60
+    height: 60
+  layout:
+    hidden: true
+  permalink:
+    hidden: true
+  
