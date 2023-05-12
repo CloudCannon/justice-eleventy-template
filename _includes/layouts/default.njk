@@ -30,7 +30,7 @@ ogtype: website
 				<nav>
 					<ul>
 						{% for item in collections.nav %}
-							<li><a href="{{ item.url }}"{% if page.fileSlug === item.fileSlug %} class="active"{% endif %}>{{ item.data.title }}</a></li>
+							<li><a href="{{ item.url }}"{% if page.url === item.url %} class="active"{% endif %}>{{ item.data.title }}</a></li>
 						{% endfor %}
 					</ul>
 				</nav>
