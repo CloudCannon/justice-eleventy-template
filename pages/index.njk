@@ -1,18 +1,24 @@
 ---
 title:
 call_to_action: Contact
-large_header: true
+large_header: false
 show_in_navigation: false
 navigation_order: 0
 testimonials:
-  - message: We use Justice Law in all our endeavours. They offer an unparalleled service when it comes to running a business.
-    testimonial_image: "https://placekitten.com/g/60/60?a=.png"
+  - message: >-
+      We use Justice Law in all our endeavours. They offer an unparalleled
+      service when it comes to running a business.
+    testimonial_image: https://placekitten.com/g/60/60?a=.png
     name: Joice Carmold
-  - message: Justice Law are the best of the best. Being local, they care about people and have strong ties to the community.
-    testimonial_image: "https://placekitten.com/60/60?a=.png"
+  - message: >-
+      Justice Law are the best of the best. Being local, they care about people
+      and have strong ties to the community.
+    testimonial_image: https://placekitten.com/60/60?a=.png
     name: Peter Rottenburg
-  - message: Justice Law were everything we could have hoped for when buying our first home. Highly recommended to all.
-    testimonial_image: "https://placebear.com/60/60?a=.png"
+  - message: >-
+      Justice Law were everything we could have hoped for when buying our first
+      home. Highly recommended to all.
+    testimonial_image: https://placebear.com/60/60?a=.png
     name: D. and G. Gibbleston
 permalink: /
 ---
@@ -26,7 +32,7 @@ permalink: /
 	{% for testimonial in testimonials %}
 		<blockquote class="testimonial">
 			<p class="testimonial-message">{{ testimonial.message }}</p>
-			<p class="testimonial-author"><img src="{{ testimonial.testimonial_image }}" alt="Photo of {{ testimonial.name }}"> {{ testimonial.name }}</p>
+			<p class="testimonial-author"><img src="{{ testimonial.testimonial_image }}" alt="Photo of {{ testimonial.name }}" /> {{ testimonial.name }}</p>
 		</blockquote>
 	{% endfor %}
 </div>
