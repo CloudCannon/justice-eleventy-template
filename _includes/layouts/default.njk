@@ -24,7 +24,7 @@ ogtype: website
 	</head>
 
 	<body>
-		<header style="background-image: url('{{ background_image_path }}');" {% if large_header %}class="main-hero"{% endif %}>
+		<header class="header-background" {% if large_header %}class="main-hero"{% endif %}>
 			<div class="container">
 				<h1><a href="/">{{ company.title }}</a></h1>
 				<nav>
@@ -35,6 +35,7 @@ ogtype: website
 					</ul>
 				</nav>
 			</div>
+		<img class="header-img" src="{{ background_image_path }}" alt="Background">
 		</header>
 
 		<section class="main">
