@@ -22,8 +22,14 @@ header {
 	background-position: calc(50% - 40px) 175px;
 	box-sizing: border-box;
 
+	.header-img {
+		max-width: 100%;
+		padding-bottom: 0;
+	}
+
 	.container {
 		text-align: center;
+		padding-bottom: 0;
 	}
 
 	@media (min-width: $mobile-break) {
@@ -71,7 +77,19 @@ header a.active {
 	border-bottom: 2px solid;
 }
 
-header,
+header {
+	padding: 30px 20px 0;
+	line-height: 0;
+
+	nav {
+		line-height: 1.75;
+	}
+
+	@media (min-width: $mobile-break) {
+		padding: 80px 40px;
+	}
+}
+
 footer,
 section {
 	padding: 30px 20px;
