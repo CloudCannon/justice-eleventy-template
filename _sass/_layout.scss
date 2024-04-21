@@ -32,8 +32,9 @@ header {
 		}
 
 		@media (min-width: 1040px) {
-			max-height: 900px;
-			padding-left: 410px;
+			max-height: calc(100vh - 80px);
+			height: 100%;
+			overflow: hidden;
 		}
 	}
 
