@@ -32,7 +32,7 @@ Justice was made by [CloudCannon](https://cloudcannon.com/).
 3. Get a workflow going to see your site's output (with [CloudCannon](https://app.cloudcannon.com/)
 or Eleventy locally).
 
-## Develop
+## Developp
 
 Justice was built with [Eleventy](https://www.11ty.dev/) version 1.0, but should support newer
 versions as well.

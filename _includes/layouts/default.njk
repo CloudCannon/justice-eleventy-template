@@ -5,36 +5,37 @@ ogtype: website
 
 <html>
 	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 		<title>{% if title %}{{ title }} | {% endif %}{{ seo.title }}</title>
-		<meta name="description" content="{% pageDescription "" %}">
-		<meta name="robots" content="{% metaRobots "" %}">
-		<meta name="author" content="{% metaAuthor "" %}">
-		<link rel="canonical" href="{% canonicalURL "" %}">
+		<meta name="description" content="{% pageDescription "" %}" />
+		<meta name="robots" content="{% metaRobots "" %}" />
+		<meta name="author" content="{% metaAuthor "" %}" />
+		<link rel="canonical" href="{% canonicalURL "" %}" />
 		{% openGraph "" %}
 		{% twitterCard "" %}
 
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quattrocento|Vollkorn:400,400i,700,700i">
-		<link rel="stylesheet" href="/css/main.css">
-		<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
-		<link rel="icon" type="image/png" href="/images/touch-icon.png" sizes="192x192">
-		<link rel="icon" type="image/png" href="/images/favicon.png">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quattrocento|Vollkorn:400,400i,700,700i" />
+		<link rel="stylesheet" href="/css/main.css" />
+		<link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+		<link rel="icon" type="image/png" href="/images/touch-icon.png" sizes="192x192" />
+		<link rel="icon" type="image/png" href="/images/favicon.png" />
 	</head>
 
 	<body>
-		<header style="background-image: url('{{ background_image_path }}');" {% if large_header %}class="main-hero"{% endif %}>
+		<header class="container" {% if large_header %}class="main-hero"{% endif %}>
 			<div class="container">
 				<h1><a href="/">{{ company.title }}</a></h1>
 				<nav>
 					<ul>
 						{% for item in collections.nav %}
-							<li><a href="{{ item.url }}"{% if page.url === item.url %} class="active"{% endif %}>{{ item.data.title }}</a></li>
+							<li><a href="{{ item.url }}" {% if page.url === item.url %} class="active"{% endif %}>{{ item.data.title }}</a></li>
 						{% endfor %}
 					</ul>
 				</nav>
 			</div>
+		<img class="header-img" src="{{ background_image_path }}" alt="Background" />
 		</header>
 
 		<section class="main">
