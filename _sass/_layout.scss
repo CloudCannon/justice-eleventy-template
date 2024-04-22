@@ -32,6 +32,7 @@ header {
 		max-width: 100%;
 		max-height: 550px;
 		padding-bottom: 0;
+		padding-top: 80px;
 
 		@media (min-width: $mobile-break) {
 			max-width: 80%;
