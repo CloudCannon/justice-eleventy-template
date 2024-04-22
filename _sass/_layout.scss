@@ -23,7 +23,6 @@ header {
 	box-sizing: border-box;
 
 	@media (min-width: 1040px) {
-		max-height: calc(100vh - 80px);
 		height: 100%;
 		overflow: hidden;
 	}
